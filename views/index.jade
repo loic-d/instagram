@@ -1,0 +1,28 @@
+html
+    head
+        title!= title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Vollkorn')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:100')
+        link(rel='stylesheet', href='/css/styles.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+        script(src='/js/script.js')
+    body
+       .container
+           .col-md-12
+               form(class="search-form")
+                    input(type="text", placeholder="Search pictures by tag" class="search-input")
+           - var count = 0;
+           - if (medias !== null){
+               each thing in medias
+                   - if (count % 3 === 0 || i === 0) {
+                    .row
+                   - }
+                       .col-md-4
+                           .image-container
+                               img(class = "image-media", src = thing.images.standard_resolution['url'])
+                               p.image-description #{thing.caption.text}
+
+                       - count ++
+           -}
