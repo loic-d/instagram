@@ -9,20 +9,24 @@ html
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
         script(src='/js/script.js')
     body
-       .container
+       .container.main
            .col-md-12
                form(class="search-form")
-                    input(type="text", placeholder="Search pictures by tag" class="search-input")
+                    input(type="text", placeholder="Search pictures by tag and press ENTER" class="search-input")
            - var count = 0;
-           - if (medias !== null){
-               each thing in medias
+           - if (typeof data[0] == 'undefined') {
+                .col-md-12
+                    p.no-results no results
+           - }
+           - else {
+               each thing in data
                    - if (count % 3 === 0 || i === 0) {
                     .row
                    - }
                        .col-md-4
-                           .image-container
-                               img(class = "image-media", src = thing.images.standard_resolution['url'])
-                               p.image-description #{thing.caption.text}
+                           .card
+                               img(class = "card-media", src = thing.images.low_resolution['url'])
+                               p.card-description #{thing.caption.text}
 
                        - count ++
            -}

@@ -7,18 +7,19 @@ app.set('view engine', 'jade');
 app.use(express.static('public'));
 
 ig.use({
-    client_id: 'YOUR_CLIENT_ID',
-    client_secret: 'YOUR_SECRET_CLIENT_ID'
+    client_id: 'CLIENT_ID',
+    client_secret: 'CLIENT_SECRET'
 });
 
 app.get('/', function(req, res){
-    res.render('index', { title: 'Instagram', medias: null});
+    res.render('index', { title: 'Instagram', data: null});
 });
 
 app.get('/:tag', function(req, res){
     var tag = req.params.tag;
     ig.tag_media_recent(tag, function(err, medias, pagination, remaining, limit) {
-        res.render('index', { title: 'Instagram', medias: medias});
+        console.log(typeof medias);
+        res.render('index', { title: 'Instagram', data: medias});
     });
 });
 
