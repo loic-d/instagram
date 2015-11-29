@@ -1,6 +1,6 @@
 # Test instagram API
 
-A simple Node.js / Express app to extract pictures from Instagram based on a specific tag.
+A simple Express app to extract pictures from Instagram based on a specific tag.
 
 ```
 git clone git@github.com:loic-d/instagram.git
