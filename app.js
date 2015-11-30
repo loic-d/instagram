@@ -18,7 +18,6 @@ app.get('/', function(req, res){
 app.get('/:tag', function(req, res){
     var tag = req.params.tag;
     ig.tag_media_recent(tag, function(err, medias, pagination, remaining, limit) {
-        console.log(typeof medias);
         res.render('index', { title: 'Instagram', data: medias});
     });
 });
