@@ -7,8 +7,8 @@ app.set('view engine', 'jade');
 app.use(express.static('public'));
 
 ig.use({
-    client_id: 'CLIENT_ID',
-    client_secret: 'CLIENT_SECRET'
+    client_id: '05ee4dc91aa14110a2c52e33e19ebf06',
+    client_secret: '47118dcf35d740f3a675cfd7a13d0c11'
 });
 
 app.get('/', function(req, res){

@@ -1,0 +1,30 @@
+{
+  "name": "instagram-node",
+  "version": "1.0.0",
+  "description": "Very simple Express app to extract pictures from Instagram",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "instagram-node": "^0.5.8",
+    "jade": "^1.11.0",
+    "parse-json-response": "^1.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "parse-json-response": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loic-d/instagram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loic-d/instagram/issues"
+  },
+  "homepage": "https://github.com/loic-d/instagram#readme"
+}
